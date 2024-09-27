@@ -1,0 +1,112 @@
+*{
+ padding: 0%;
+ margin: 0%;
+ box-sizing: border-box;
+}
+.bottons{
+ display: flex;
+ margin: 4em;
+ justify-content: space-evenly;
+ width: 20%;
+}
+.bottons button{
+ background: #333;
+ color: white;
+ padding: .8em;
+ border: none;
+ width: 30%;
+}
+.show_notifications{
+ position: absolute;
+ bottom: 3em;
+ right: 2em;
+}
+.show_notifications{
+ padding: .4em;
+}
+.show_notifications div{
+ width: 20em;
+ height: 6vh;
+ border-radius: .3em;
+ /* border: 1px solid grey; */
+ border: none;
+ display: flex;
+ align-items: center;
+ margin: .4em 0em;
+ 
+
+}
+
+.div_message_notif::after{
+ content: "";
+ width: 100%;
+ height: 2px;
+ background: green;
+}
+.show_notifications div{
+ width: 20em;
+ height: 7vh;
+ border-radius: .3em;
+ border: 1px solid grey;
+ display: flex;
+ align-items: center;
+ margin: .4em 0em;
+ position: relative;
+
+ animation: anim_show_div .5s linear ;
+
+}
+@keyframes anim_show_div {
+ 0%{
+  transform: translateX(-10%);
+ }
+ 100%{
+   transform: translateX(-50%);
+ }
+}
+.show_notifications div::after{
+ content: "";
+ width: 100%;
+ height: 5px;
+ position: absolute;
+ bottom:0%;
+ animation: animation 5s linear forwards ;
+
+}
+@keyframes animation {
+  100%{
+    width: 0%;
+  }
+}
+.show_notifications div p{
+ display: flex;
+ align-items: center;
+
+}
+.show_notifications div p{
+ margin-left: 2em;
+}
+.show_notifications div p i{
+  font-size: 1.7em;
+  margin-right: .5em;
+}
+.show_notifications .seccuss{
+ box-shadow: 2px 2px 10px rgba(0, 128, 0, 0.5);
+}
+.show_notifications .seccuss::after{
+ background: green;
+}
+.show_notifications .error{
+ box-shadow: 2px 2px 10px rgba(255, 0, 0, 0.5);
+}
+.show_notifications .error::after{
+ background: red;
+
+}
+.show_notifications .invalid{
+ box-shadow: 2px 2px 10px rgba(255, 166, 0, 0.5);
+}
+.show_notifications .invalid::after{
+ background: orange;
+
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title> Notifications </title>
+ <link rel="stylesheet" href="style.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+<body>
+
+     <div class="bottons">
+         <button onclick="show_notification(seccuss)">seccuss</button>
+         <button onclick="show_notification(error)">error</button>
+         <button onclick="show_notification(invalid)">invalid</button>
+     </div>
+
+     <div class="show_notifications">
+      
+      
+     </div>
+
+    <script>
+      let seccuss="<p> <i class='fa-solid fa-check' style='color: green;'></i> Seccussfuly submited </p>"
+       let error ="<p> <i class='fa-solid fa-xmark' style='color: #f70202;'></i> Error submited! </p>"
+       let invalid="<p> <i class='fa-solid fa-circle-exclamation' style='color: #FFD43B;''></i> Invalid submited! </p>"
+
+   
+       function show_notification(msg){
+      
+         let div =document.createElement('div')
+       
+         if(msg.includes("Seccussfuly")){
+          div.innerHTML=seccuss
+          div.className=''
+          div.classList.add("seccuss")
+         
+         }
+         if(msg.includes("Error")){
+           div.innerHTML=error
+           div.className=''
+           div.classList.add("error")  
+         }
+         if(msg.includes("Invalid")){
+           div.innerHTML=invalid   
+           div.className=''
+           div.classList.add("invalid")  
+          
+         }
+
+         document.querySelector(".show_notifications").append(div)
+         setTimeout(() => {
+            document.querySelector(".show_notifications div:first-child").remove(div)
+          }, 5000);
+       }
+    </script>
+   
+</body>
+</html>
